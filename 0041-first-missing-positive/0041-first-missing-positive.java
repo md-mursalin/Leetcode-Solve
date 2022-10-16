@@ -1,21 +1,17 @@
 class Solution {
-   public int firstMissingPositive(int[] nums) {
-        int len = nums.length;
+    public int firstMissingPositive(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i : nums) {
+            map.put(i, 1);
 
-        int i;
-        for (i = 0; i < len; i++) {
-            map.put(nums[i], 1);
         }
-
-
-        for (i = 1; i <=len; i++) {
+        int i;
+        for (i = 1; i <= nums.length; i++) {
             if (map.get(i) == null) {
                 break;
             }
         }
         return i;
-
-
+        
     }
     }
